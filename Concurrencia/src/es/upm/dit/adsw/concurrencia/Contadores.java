@@ -27,7 +27,7 @@ public class Contadores {
 	private static class Contador extends Thread {
 		public void run() {
 			for (long i = 0; i<nVeces; i++)
-				cuenta++;    // regi—n cr’tica
+				cuenta++;    // regiï¿½n crï¿½tica
 		}
 	}
 
@@ -44,7 +44,7 @@ public class Contadores {
 			catch (InterruptedException e) {return;}
 		}
 		System.out.print("cuenta = " + cuenta);
-		System.out.println("; deber’a ser " + nThreads*nVeces);
+		System.out.println("; deberÃ­a ser " + nThreads*nVeces);
 	}
 
 }
