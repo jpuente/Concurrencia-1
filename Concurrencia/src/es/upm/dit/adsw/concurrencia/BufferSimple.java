@@ -19,7 +19,7 @@ public class BufferSimple <E> implements Buffer<E> {
 		while (!lleno) wait(); // espera que haya un valor
 		dato = almacen;
 		lleno = false;
-		notify();              // avisa de que hay sitio
+		notifyAll();              // avisa de que hay sitio
 		return dato;
 	}
 
