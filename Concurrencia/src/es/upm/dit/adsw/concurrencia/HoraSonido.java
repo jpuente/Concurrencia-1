@@ -12,7 +12,10 @@ import java.awt.*;
  */
 public class HoraSonido {
 
-	/**
+	/*
+	 * 
+	 * 
+	 * *
 	 * @param args
 	 */
 	public static void main(String[] args) {
