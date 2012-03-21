@@ -36,8 +36,8 @@ public class Productor extends Thread {
 			while (true) { 
 				control.esperar();
 				String msg = String.valueOf(n++);
+				buffer.enviar(msg);  
 				logWindow.println("Envía " + msg);
-				buffer.enviar(msg);           
 				Thread.sleep(random.nextInt(5) * 1000);
 			} 
 		} catch (InterruptedException e) {logWindow.println(e.toString());}
