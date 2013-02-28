@@ -5,28 +5,28 @@ import java.util.Random;
 /**
  * @author jmanas
  * @author jpuente
- * @version 20120320
+ * @version 20130228
  */
 public class Productor extends Thread {
 
 	private Buffer<String> buffer; 
 	private int n;
-	
+
 	private Control control = new Control();
-    private LogWindow logWindow;
+	private LogWindow logWindow;
 	private final Random random = new Random();
-	
+
 	public Productor(String id, Buffer<String> buffer, int n0) {
 		setName(id);
 		this.buffer = buffer;
 		n = n0;
-        logWindow = new LogWindow(this);
+		logWindow = new LogWindow(this);
 	}
-	
+
 	public void arrancar() {
 		control.arrancar();
 	}
-	
+
 	public void parar() {
 		control.parar();
 	}
@@ -40,6 +40,8 @@ public class Productor extends Thread {
 				logWindow.println("Envía " + msg);
 				Thread.sleep(random.nextInt(5) * 1000);
 			} 
-		} catch (InterruptedException e) {logWindow.println(e.toString());}
+		} catch (InterruptedException e) {
+			logWindow.println(e.toString());
+		}
 	}
 }

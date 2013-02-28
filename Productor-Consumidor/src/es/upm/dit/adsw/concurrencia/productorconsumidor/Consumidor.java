@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @author jmanas
  * @author jpuente
- * @version 20120320
+ * @version 20130228
  */
 public class Consumidor extends Thread {
 

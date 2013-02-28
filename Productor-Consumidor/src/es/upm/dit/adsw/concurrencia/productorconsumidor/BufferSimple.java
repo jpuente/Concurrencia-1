@@ -1,7 +1,7 @@
 package es.upm.dit.adsw.concurrencia.productorconsumidor;
 
 /**
- * Buffer con capacidad para 1 elemento
+ * Buffer con capacidad para 1 dato
  * 
  * @author jpuente
  * @version 20120320
