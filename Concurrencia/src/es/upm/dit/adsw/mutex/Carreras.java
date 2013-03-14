@@ -20,7 +20,7 @@ public class Carreras {
 	/**
 	 * Thread que incrementa cuenta nVeces
 	 */
-	private static class Contador extends Thread {
+	private static class Incrementa extends Thread {
 		public void run() {
 			for (long i = 0; i<nVeces; i++)
 				cuenta++;    // región crítica
@@ -30,9 +30,9 @@ public class Carreras {
 	public static void main(String[] args) {
 		System.out.println(nThreads + " contadores incrementando " 
 				+ "la cuenta " + nVeces +" veces cada uno" );
-		Contador[] contador = new Contador[nThreads];
+		Incrementa[] contador = new Incrementa[nThreads];
 		for (int id = 0; id < nThreads; id++) {
-			contador[id] = new Contador();
+			contador[id] = new Incrementa();
 			contador[id].start();
 		}
 		for (int id = 0; id < nThreads; id++) {

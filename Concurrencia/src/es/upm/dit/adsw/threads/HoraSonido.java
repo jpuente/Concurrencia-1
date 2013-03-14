@@ -11,39 +11,38 @@ import java.awt.*;
  *
  */
 public class HoraSonido {
-
-	/*
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		Thread hora = new Thread () {
-			@Override
-			public void run () {
-				try {
-					while (true) {
-						Date date = new Date();
-						System.out.println(date.toString());
-						sleep(1000);       /* espera 1000 ms */
-					}
-				} catch (InterruptedException e) {
-					return;                  /* terminar esta hebra */
-				} 
-			}
-		};
-		hora.start();
-
-		Thread sonido = new Thread() {
-			@Override
-			public void run() {
-				Scanner sc = new Scanner(System.in);
-				while(true) {
-					sc.nextLine();
-					Toolkit.getDefaultToolkit().beep(); 
+	
+	static class Hora extends Thread {
+		@Override
+		public void run () {
+			try {
+				while (true) {
+					Date date = new Date();
+					System.out.println(date.toString());
+					sleep(1000);       /* espera 1000 ms */
 				}
+			} catch (InterruptedException e) {
+				return;                  /* terminar esta hebra */
+			} 
+		}
+	}
+	
+	static class Sonido extends Thread {
+		@Override
+		public void run() {
+			Scanner sc = new Scanner(System.in);
+			while(true) {
+				sc.nextLine();
+				Toolkit.getDefaultToolkit().beep(); 
 			}
-		};
+		}
+	}
+
+
+	public static void main(String[] args) {
+		Thread hora = new Hora () ;
+		Thread sonido = new Sonido();
+		hora.start();
 		sonido.start();
 	}
 }
