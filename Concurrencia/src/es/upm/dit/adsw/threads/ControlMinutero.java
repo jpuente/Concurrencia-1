@@ -1,4 +1,4 @@
-package es.upm.dit.adsw.concurrencia;
+package es.upm.dit.adsw.threads;
 
 public class ControlMinutero {
 

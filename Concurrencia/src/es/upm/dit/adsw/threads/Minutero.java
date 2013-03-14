@@ -1,4 +1,4 @@
-package es.upm.dit.adsw.concurrencia;
+package es.upm.dit.adsw.threads;
 
 public class Minutero extends Thread {
 
@@ -9,7 +9,7 @@ public class Minutero extends Thread {
 			while (true) {  
 				System.out.println("Minutos: " + minutos);
 				// sleep(5000); // La hebra se bloquea un minuto
-				sleep(5000);
+				sleep(6000);
 				minutos++;
 			}
 		} catch (InterruptedException e) {

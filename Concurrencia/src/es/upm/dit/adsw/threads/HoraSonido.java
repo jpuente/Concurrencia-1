@@ -1,4 +1,4 @@
-package es.upm.dit.adsw.concurrencia;
+package es.upm.dit.adsw.threads;
 
 import java.util.*;
 import java.awt.*;
@@ -19,6 +19,7 @@ public class HoraSonido {
 	public static void main(String[] args) {
 
 		Thread hora = new Thread () {
+			@Override
 			public void run () {
 				try {
 					while (true) {
@@ -34,6 +35,7 @@ public class HoraSonido {
 		hora.start();
 
 		Thread sonido = new Thread() {
+			@Override
 			public void run() {
 				Scanner sc = new Scanner(System.in);
 				while(true) {
@@ -43,8 +45,5 @@ public class HoraSonido {
 			}
 		};
 		sonido.start();
-		
-		 
-		
 	}
 }

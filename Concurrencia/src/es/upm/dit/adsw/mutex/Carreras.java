@@ -1,16 +1,12 @@
-package es.upm.dit.adsw.concurrencia;
+package es.upm.dit.adsw.mutex;
 
 /**
- * Condiciones de carrera en variables compartidas.
+ * Ejemplo elemental: condiciones de carrera en variables compartidas.
+ * 
  * @author jpuente
- * @version 20120309
+ * @version 20130314
  */
-
-/**
- * @author jpuente
- *
- */
-public class Contadores {
+public class Carreras {
 
 	/**
 	 * variable compartida.
@@ -22,7 +18,7 @@ public class Contadores {
 	static final int nThreads = 10;
 
 	/**
-	 * Thread que incrementa contador nVeces
+	 * Thread que incrementa cuenta nVeces
 	 */
 	private static class Contador extends Thread {
 		public void run() {
