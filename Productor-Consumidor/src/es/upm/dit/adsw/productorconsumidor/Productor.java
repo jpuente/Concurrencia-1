@@ -1,4 +1,4 @@
-package es.upm.dit.adsw.concurrencia.productorconsumidor;
+package es.upm.dit.adsw.productorconsumidor;
 
 import java.util.Random;
 
