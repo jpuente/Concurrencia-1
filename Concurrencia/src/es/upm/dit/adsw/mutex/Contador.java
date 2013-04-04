@@ -9,18 +9,18 @@ package es.upm.dit.adsw.mutex;
  * @version 20130314
  */
 public class Contador {
-	
+
 	private long cuenta = 0;
-	
+
 	public Contador(long valorInicial){
 		cuenta = valorInicial;
 	}
-	
+
 	public void incrementar() {
-	    cuenta++;                
-	  }
-		
-	  public long valor() {
-	    return cuenta;
-	  }
+		cuenta++;                
+	}
+
+	public long valor() {
+		return cuenta;
+	}
 }

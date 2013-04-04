@@ -7,7 +7,7 @@ package es.upm.dit.adsw.productorconsumidor;
 public class ProductorConsumidor {
 
 	public static void main(String[] args) {
-		Buffer<String> buffer = new BufferMultiple<String>(10);
+		Buffer<String> buffer = new BufferSimple<String>();
 		Productor productor1 = new Productor("p1", buffer, 1000);
 		Productor productor2 = new Productor("p2", buffer, 2000);
 		Consumidor consumidor = new Consumidor("c", buffer);
