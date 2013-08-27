@@ -1,22 +1,26 @@
 package es.upm.dit.concurrencia.threads;
 
-public class Minutero extends Thread {
+/**
+ * Cuenta los minutos transcurridos
+ * 
+ * @author jpuente
+ * @version 2013-02-28
+ *
+ */public class Minutero extends Thread {
 
-	@Override 
-	public void run() {
-		int minutos=0;
-		try {
-			while (true) {  
-				System.out.println("Minutos: " + minutos);
-				// sleep(5000); // La hebra se bloquea un minuto
-				sleep(6000);
-				minutos++;
-			}
-		} catch (InterruptedException e) {
-			System.out.println("Fin");
-			return;  // La hebra ha sido desbloqueada mediante una
-		}          // invocación a interrupt
-	}
-
-
-}
+	 @Override 
+	 public void run() {
+		 int minutos=0;
+		 try {
+			 while (true) {  
+				 // sleep(60000);
+				 sleep(6000);    // más corto para que no se haga pesado
+				 minutos++;
+				 System.out.println("Minutos: " + minutos);
+			 }
+		 } catch (InterruptedException e) {
+			 System.out.println("Fin");
+			 return; 
+		 }
+	 }
+ }
